@@ -43,7 +43,8 @@
 [branch]
     autosetuprebase = always
 [rebase]
-	autoStash = true
+	autostash = true
+    autosquash = true
 [user]
 	email = mehdi.raddadi@invenis.co
 	name = Ouradze

@@ -6,7 +6,7 @@ install_packet_manager() {
 }
 
 install_system_dependencies() {
-    yay -Sy neovim visual-studio-code-bin tmux python-powerline-git bat tk docker snapd powerline-fonts-git arandr python-pyopenssl libffi rxvt-unicode urxvt-perls wget i3lock-color-git nerd-fonts-dejavu-complete lefthook deezer git-cola steam \
+    yay -Sy neovim-git visual-studio-code-bin tmux python-powerline-git bat tk docker snapd powerline-fonts-git arandr python-pyopenssl libffi rxvt-unicode urxvt-perls wget i3lock-color-git nerd-fonts-dejavu-complete lefthook deezer git-cola steam \
     && pip install virtualenvwrapper black
 }
 
@@ -37,10 +37,7 @@ setup_neovim() {
     && rm -rf ~/.fzf ~/.config/nvim\
     && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
     && ~/.fzf/install \
-    && mkdir ~/.config/nvim \
-    && ln -s $(pwd)/init.vim ~/.config/nvim/init.vim \
-    && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-    && nvim +PlugInstall +qall 
+	&& bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/master/utils/installer/install.sh)
 }
 
 install_oh_my_zsh() {
@@ -112,4 +109,5 @@ dev_tools() {
 #dev_tools
 #node_setup
 
-install
+#install
+setup_neovim

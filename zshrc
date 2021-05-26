@@ -80,9 +80,16 @@ export PATH="$HOME/bin:/opt/sbt/bin:$PATH"
 
 source <(helm completion zsh)
 source <(kompose completion zsh)
+source <(k3d completion zsh)
+source <(kubectl completion zsh)
 
 # invenis
 # export $(egrep -v '^#' ~/.tokens.ini | xargs)
+
+# krew
+export PATH="$HOME/.krew/bin:$PATH"
+# kustomize
+export PATH="$HOME/.local/bin:$PATH"
 
 rlk () {
         git checkout --theirs poetry.lock
